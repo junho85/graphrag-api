@@ -1,0 +1,9 @@
+[project]
+name = "graphrag-api"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi",
+    "graphrag==2.2.1",
+]
