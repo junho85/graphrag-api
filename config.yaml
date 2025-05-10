@@ -1,0 +1,22 @@
+# GraphRAG API Configuration
+
+# Server settings
+server:
+  host: "0.0.0.0"
+  port: 8000
+  debug: false
+
+# Application settings
+app:
+  title: "GraphRAG API"
+  description: "API for GraphRAG"
+  version: "0.1.0"
+
+# Logging settings
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  
+# Database settings (if needed in the future)
+# database:
+#   url: "postgresql://user:password@localhost:5432/graphrag"

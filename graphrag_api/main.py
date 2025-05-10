@@ -1,9 +1,15 @@
 from fastapi import FastAPI
+import uvicorn
+from graphrag_api.config import config
+
+# Get application configuration
+app_config = config.get_app_config()
+server_config = config.get_server_config()
 
 app = FastAPI(
-    title="GraphRAG API",
-    description="API for GraphRAG",
-    version="0.1.0",
+    title=app_config.get("title", "GraphRAG API"),
+    description=app_config.get("description", "API for GraphRAG"),
+    version=app_config.get("version", "0.1.0"),
 )
 
 @app.get("/health")
@@ -14,5 +20,10 @@ async def health_check():
     return {"status": "healthy"}
 
 if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(
+        app, 
+        host=server_config.get("host", "0.0.0.0"), 
+        port=server_config.get("port", 8000),
+        reload=server_config.get("debug", False),
+        log_level="debug" if server_config.get("debug", False) else "info",
+    )
