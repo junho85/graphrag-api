@@ -8,4 +8,5 @@ dependencies = [
     "graphrag==2.2.1",
     "uvicorn",
     "pyyaml",
+    "python-dotenv",
 ]
