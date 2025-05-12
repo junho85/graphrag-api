@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 import uvicorn
 import logging
-from graphrag_api.config import config
+from app.config import config
 
 # Configure logging
 logging_config = config.get_logging_config()

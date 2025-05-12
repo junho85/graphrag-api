@@ -3,7 +3,7 @@ Test script to verify that the configuration module works correctly.
 Includes tests for environment variable substitution.
 """
 import os
-from graphrag_api.config import config
+from app.config import config
 
 def test_config():
     """Test the configuration module."""
